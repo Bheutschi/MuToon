@@ -2,10 +2,16 @@
 
 require 'mongo'
 require 'dotenv/load'
+require 'singleton'
 
 class Database
-  def self.client
-    @client ||= Mongo::Client.new(
+
+  include Singleton
+
+  attr_reader :client
+
+  def initialize
+    @client = Mongo::Client.new(
       ["#{ENV["MONGO_HOST"]}:#{ENV["MONGO_PORT"]}"],
       user:        ENV["MONGO_USER"],
       password:    ENV["MONGO_PASSWORD"],
