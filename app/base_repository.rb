@@ -7,6 +7,6 @@ class BaseRepository
 
   protected
   def collection
-    raise "Tu dois définir le nom de la collection dans la classe enfant !"
+    raise "You must define the collection name in the child class!"
   end
 end

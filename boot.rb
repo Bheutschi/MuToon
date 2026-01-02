@@ -11,7 +11,7 @@ root = __dir__ || Dir.pwd
 app_dir = File.join(root, 'app')
 
 unless Dir.exist?(app_dir)
-  raise "ERREUR CRITIQUE : Le dossier 'app' est introuvable ici : #{app_dir}"
+  raise "CRITICAL ERROR: The 'app' directory cannot be found here: #{app_dir}"
 end
 
 loader.push_dir(app_dir)
